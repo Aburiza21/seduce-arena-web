@@ -1,0 +1,16 @@
+services:
+  seduce-arena-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: seduce-arena-web:latest
+    container_name: seduce-arena-web
+    restart: unless-stopped
+    ports:
+      - "8089:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    # Uncomment and set your .env values here if needed:
+    # env_file:
+    #   - .env.production
